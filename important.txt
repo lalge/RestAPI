@@ -1,0 +1,114 @@
+MONGO QUERIES
+=========================================================================================================================================
+Mongo Query - Dedup check make zero
+------------------------------------------------------------
+db.inx_cms_entity_angel.find({}).forEach(function (doc) {if(typeof doc.dt!='undefined'){for (var i = 0; i < doc.dt.length; i++) {doc.dt[i].duplicate_check=0;} db.inx_cms_entity_angel.save(doc);}});
+db.inx_cms_entity_gust.find({}).forEach(function (doc) {if(typeof doc.dt!='undefined'){for (var i = 0; i < doc.dt.length; i++) {doc.dt[i].duplicate_check=0;} db.inx_cms_entity_gust.save(doc);}});
+db.inx_cms_entity_startuphub.find({}).forEach(function (doc) {if(typeof doc.dt!='undefined'){for (var i = 0; i < doc.dt.length; i++) {doc.dt[i].duplicate_check=0;} db.inx_cms_entity_startuphub.save(doc);}});
+db.inx_cms_entity_startupblink.find({}).forEach(function (doc) {if(typeof doc.dt!='undefined'){for (var i = 0; i < doc.dt.length; i++) {doc.dt[i].duplicate_check=0;} db.inx_cms_entity_startupblink.save(doc);}});
+db.inx_cms_entity_f6s.find({}).forEach(function (doc) {if(typeof doc.dt!='undefined'){for (var i = 0; i < doc.dt.length; i++) {doc.dt[i].duplicate_check=0;} db.inx_cms_entity_f6s.save(doc);}});
+
+Find duplicate records
+-------------------------------------------------------------
+db.inx_cms_company.aggregate(
+    {"$group" : { "_id": "$company_name.value", "count": { "$sum": 1 } } },
+    {"$match": {"_id" :{ "$ne" : null } , "count" : {"$gt": 1} } }, 
+    {"$project": {"name" : "$_id", "_id" : 0} }
+)
+
+Size or Count Query
+-------------------------------------------------------------
+{"people_work_experience.source":{$size: 2} }
+
+
+Rename all fields in mongo query
+-------------------------------------------------------------
+db.inx_cms_entity_f6s.update( {}, { $rename: { 'company_short_desc': 'company_whats_unique'}}, false, true )
+db.inx_cms_entity_gust.update( {},{$rename: {'all_dump.comp_short_desc': 'company_whats_unique' }}, false, true )
+
+
+Set & update Mongo documents
+-------------------------------------------------------------
+$sdata['$set'] = array('product_tab_status.taxonomy'=>1); /// Value set to fields without overwrite other fields
+$sdata['$set'] = array('product_tab_status'=>array('taxonomy'=>1)); /// Value set with overwrite other fields
+
+Check duplicate record
+-------------------------------------------------------------
+db.inx_cms_company.aggregate( [
+      {$group : {_id : {'company_website':'$company_website.value'},
+           count: { $sum: 1 }}},
+            { $match: { count: { $gt: 1 } } }
+   ]
+)
+
+Pull query
+--------------------------------------------------------------
+db.inx_cms_entity_gust.update(
+  	{}, 
+  	{$pull: {dt:{duplicate_check:0}}},
+  	{ multi: true }
+);
+
+
+Copy collection one to other
+--------------------------------------------------------------
+db.inx_people.find().forEach(function(doc){
+   db.inx_cms_people.insert(doc); // start to replace
+});
+
+Set Username and Password to the database
+--------------------------------------------------------------
+db.createUser(
+  {
+    user: "inx_uat",
+    pwd: "",
+    roles: [ { role: "readWrite", db: "inx_uat" }]
+  }
+)
+
+
+
+SHELL COMMANDS
+==========================================================================================================================================
+In UAT SSH - Node command (Run before node script)
+-------------------------------------------------------------
+$ export NODE_PATH=$(npm root --quiet -g)
+
+
+In UAT SSH - user Mongo shell
+-------------------------------------------------------------
+> mongo
+> use <database_name>
+
+
+For zip folder - command
+-------------------------------------------------------------
+$ tar -zcvf inx_uat_cms.tar.gz dump/inx_uat_cms/
+$ tar xvzf file.tar.gz      ////// UNTAR
+
+
+Download from server to server
+-------------------------------------------------------------
+$ wget –no-check-certificate http://185.216.76.28/downloads/AI_Data.zip
+
+Sync and copy
+-------------------------------------------------------------
+$ rsync -avz company/* people/
+
+Copy collection from one to other
+-------------------------------------------------------------
+$ mongoexport -d inx_cms -c sourcecollection | mongoimport -d inx_cms -c targetcollection --drop
+
+
+Deploy inx_cms to UAT
+-------------------------------------------------------------
+$ sh /home/deployment/deployment_inx_cms_uat.sh
+
+
+NODE
+============================================================================================================================================
+NODE_PATH (Enviroment variable)
+-------------------------------------------------------------
+C:\Users\suraj.varane\AppData\Roaming\npm
+
+
