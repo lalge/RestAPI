@@ -112,3 +112,18 @@ NODE_PATH (Enviroment variable)
 C:\Users\suraj.varane\AppData\Roaming\npm
 
 
+PHP
+============================================================================================================================================
+Clear html  
+-------------------------------------------------------------
+htmlspecialchars();
+
+Multi-Dimention array sort with STRING
+-------------------------------------------------------------
+usort($allDt, function($a, $b) {
+    return strcmp($a["dt_name"], $b["dt_name"]);
+});
+
+Clean HTML string 
+-------------------------------------------------------------
+html_entity_decode()
