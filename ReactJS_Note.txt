@@ -1,0 +1,35 @@
+Install EXPO
+-----------------------------------------------
+$ npm install -g expo-cli
+
+Create Project
+-----------------------------------------------
+$ expo init AwesomeProject
+$ cd AwesomeProject
+$ npm start
+
+STUDY
+=======================================================================================
+Props
+-----------------------------------------------
+Define : 
+class Greeting extends Component {
+  render() {
+    return (
+      <View style={{alignItems: 'center'}}>
+        <Text>Hello {this.props.name}!</Text>
+      </View>
+    );
+  }
+}
+
+Call : 
+<Greeting name='Rexxar' />
+
+State
+-----------------------------------------------
+In general, you should initialize state in the constructor, and then call setState when you want to change it.
+
+Style
+-----------------------------------------------
+The style names and values usually match how CSS works on the web, except names are written using camel casing, e.g backgroundColor rather than background-color.
