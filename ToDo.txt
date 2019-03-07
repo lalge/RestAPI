@@ -1,0 +1,1286 @@
+06-03-2019
+------------------------------------------------------------------
+Patent Acquisition
+- driver.sleep is not working in current cent OS (on acquisition server) - (Need to update versions of driver and libraries)
+- >> Tried sleep library (Not working for driver)
+
+Client Portal
+- Registration form - for client users
+- Client login : show marketing content for selected topics
+- Select topics pop-up on first login (Industry topic is mandatory)
+
+05-03-2019
+------------------------------------------------------------------
+Patent Acquisition
+- >> Patent acquisition from USPTO - Get only US patents and update only empty fields
+- >> Get live data from inx_cms and add to acquisition server
+
+04-03-2019
+------------------------------------------------------------------
+- >> Marketing document restrict with blacklisted email ids
+https://193.39.255.164/industry_insider_cms_uat/public/marketing-doc-report
+https://uatindustryinsider.futurebridge.com/marketing/5c19dbbfea6a1461037a9d98
+- >> Marketing Content restrict with blacklisted email ids
+- >> Search is not working in UAT (Set local ip for MDB request)
+- Patent acquisition
+	- >> Patent Number format? (Some are identifiers and some are patent numbers)
+	- >> IPC && CPC --- IPC || CPC ? (Patent format only start with prefix US)
+	- >> What is biblo info? (Data from API)
+	- >> Overwrite every fields? Or save only IPC, CPC ? (Only empty filed not every fields)
+	- >> How to flow data from acquisition server to CMS and LIVE (Take data from live and acquired data from acquisition server)
+	
+- Email on MDB request failier
+
+01-03-2019
+------------------------------------------------------------------
+- Data Screening
+
+28-02-2019
+------------------------------------------------------------------
+Industry Insider CMS:
+- Screening
+
+>> Contacts who use the email address of the blacklisted companies to access the DistribuTech should not be able to access it and should be diverted to our website: futurebridge.com.
+
+MarketsAndMarkets
+- marketsandmarkets.com
+- mnmconferences.com
+Lux Research
+- luxresearchinc.com
+Aranca
+- aranca.com
+Netscibes
+- netscribes.com
+Evalueserve
+- evalueserve.com
+The Smart Cube
+- thesmartcube.com
+Frost & Sullivan
+- frost.com
+Transparency Market Research
+- transparencymarketresearch.com
+TechSci Research
+- techsciresearch.com
+GFK
+- gfk.com
+- gfkrt.com
+SmartAnalyst
+- smartanalyst.com
+Dolcera
+- dolcera.com
+Gartner
+- gartner.com
+
+27-02-2019
+------------------------------------------------------------------
+Industry Insider
+- >> Bug - PDF can download from inspect element of flowpaper details page
+Client Portal
+- >> Bug - PDF can download from inspect element of flowpaper details page
+
+22-02-2019
+------------------------------------------------------------------
+Industry Insider
+- >> Redirect energy/distributech URL 
+
+>> Industry Insider CMS scoping
+
+19-02-2019
+------------------------------------------------------------------
+Industry Insider
+- >> Bilty issue in Industry Insider
+- Company Search Changes
+
+Client Portal
+- >> Bilty issue in Client Portal
+- SMS issue in AWS
+
+18-02-2019
+------------------------------------------------------------------
+>> Client Portal UI changes for Mobile
+- >> In Mobile and iPad though the OPT lock is there still user would able to see Product & Proposals etc.
+- >> UI: In Mobile view Login button is not visible
+- >> UI: Proposal Content is accessible without OTP entered
+- >> Even after deleting NDA documents they are still appearing in front end under projects.
+
+11-02-2019
+------------------------------------------------------------------
+CDP Front End changes
+- >>Order By BTB ID
+- >>NDA, Proposal, Delivarables set as per access
+- >>Rename 
+
+09-02-2019
+------------------------------------------------------------------
+- >> Company ID to Group ID : Get users from Group ID
+- Front end changes
+- >> Ask project viewed by after make project active
+- >> Project Edit: Access rights for NDA, Proposal
+- >> Project Delivarables: Access rights for Deliverables
+- >> Contract MIS: Access rights for MIS
+- >> Ask contract viewed by after make contract active
+
+08-02-2019
+------------------------------------------------------------------
+#CMS
+1. >> Separate section Proposal Management (same like Project Management)
+   - (Need Surya)Intially, for the first time do not take any Abeyance, Dead, Abondened. Take only on going proposals
+   - (Need Surya)By default all proposals will be on inactive stage
+   - >> While making the proposal active user will have to choose the client users who will have access to
+	 >> #Proposals
+		- >>Project Viewed By 
+				- Client Stake Holder
+				- Client Team Members
+		- >>NDA
+				- Choose client users
+		- >>Proposal Document
+				- Choose client users
+	- Projects			
+			- Proposals which are converted to projects
+				- Project will remain active
+				
+			- Direct project
+				- By default keep this type of projects as inactive
+				- >>On activation user will have to choose
+						- >>Project Viewed By 
+							- Client Stake Holder
+							- Client Team Members
+						- >>NDA
+								- Choose client users
+						- >>Proposal Document
+								- Choose client users
+	- >>Same access right control on edit of project/proposal
+   
+#Front-end
+1. ?? If no proposal OR project OR contract then hide the respective tabs from the home page
+2. For Proposals (Proposals under discussion)
+		- "Summary/Brief" rename this to "Project Scope"
+		- >> "Project Agreements" -> NDA  (Section will appear only if NDA available)
+		- >> "Project Proposals" -> Proposal(s)  (Section will appear only if proposal available)
+		- >> Remove "Project Deliverables" section
+3. For Projects
+		- >>"Summary/Brief" rename this to "Project Scope"
+		- >>"Project Agreements" -> NDA  (Section will appear only if NDA available)
+		- >> "Project Proposals" -> Proposal(s)  (Section will appear only if proposal available)
+				- ?? Proposal Name (Only Client User Name can view)
+		- "Project Deliverables" 
+			- >>(Section will appear only if deliverables uploaded)
+			- ?? Hide the Feedback module/feature
+			- ?? Show (Only Client User Name can view)
+4. >> "Sales Person" -> "Relationship Manager" 
+
+06-02-2019
+------------------------------------------------------------------
+Industry Insider
+- >>Funding showing multiple on LIVE
+- >>Funding amout is not rounded properly
+- Check Funding upload functionality
+- >>Collaboration showing multiple on LIVE
+
+05-02-2019
+------------------------------------------------------------------
+- >> Export report - Distribute Tech export report
+Please change the user activity report format/name of the file for the industry insider -
+1. >> Name and format of the exported file should be like attached.
+2. There are some trend names coming with "&amp;" fix this.
+3. >> While counting the trials per relationship manager, take unique user count by user email.
+4. >> While counting the trials per indutsry or trend, take unique user count by user email.
+
+02-02-2019
+------------------------------------------------------------------
+- >> Change the dates to 5 Feb’19
+
+01-02-2019
+------------------------------------------------------------------
+Industry Insider
+- >> log for marketing content
+	- >> On details and doc page
+- >> Open Marketing content - industryinsider.futurebridge.com/energy/distributech
+
+31-1-2019
+------------------------------------------------------------------
+Industry Insider
+- New Fields : Add fields on 'upload entity' (Save data on database)
+- New Fields : Show fields on front end
+
+
+
+29-1-2019
+------------------------------------------------------------------
+Client Delivery Portal
+- >> UI changes
+- >> Download configrable from CMS for case study & whitepaper
+- >> View pdf in viewer if type is pdf - For project docs
+- >> Like Dislike button for deliverables
+- >> Patch - Download marketing content doc_download = yes
+db.getCollection("cdp_marketing_content").update(
+	{'content_type':{$in:['case_study', 'whitepaper']}, 'content_documents.doc_is_deleted':'no'},
+	{$set:{'content_documents.$.doc_download':'yes'}},
+	{multi:true}
+)
+
+28-1-2019
+------------------------------------------------------------------
+Industry Insider
+- >> New changes document review
+
+Client Delivery Portal
+- >> Add "Project" in breadcrumb on project details
+- >> Blur effect link is clickable
+- Blur effect not working in IE
+- >> New project status
+- >> Add new OPS users in details and card view details page 
+- >> Add br in project summary attachment
+- >> Mark bug resolved
+- >> only for internal user -> Security with IP access while download project documents
+
+25-1-2019
+------------------------------------------------------------------
+Client Delivery Portal
+- >> Project description multiple attachment
+- >> Name changes of FAQ and Industry Insider
+
+24-1-2019
+------------------------------------------------------------------
+Client Delivery Portal
+- >> [Bug 3496] New: User not having Client Interface Access is still able to login into CDP_FrontEnd.
+- >> Project Panel UI changes
+- >> Text changes client portal We have sent an OTP to your registered email nit***@cheersin.com and mobile ****0322
+- >> Remove date filter from all listing page (Search in title and content)
+- >> View more in FAQs (FAQ show (latest published) only top 5)
+
+
+18-1-2019
+------------------------------------------------------------------
+Client Portal
+- >> Update project type in DB UAT and LIVE
+
+Industry Insider
+- >> Sales user also can define subscription with Custom Date
+- >> User can edit from Custom Date to No Expiry
+- >> Activate cron - deactivate expired users
+- >> Patch needed : Create date for all
+db.inx_user.find({'user_subscriptions.subscription_start_date':{$exists:0}}).forEach(function (doc) {
+	  for (var i = 0; i < doc.user_subscriptions.length; i++) {
+	      doc.user_subscriptions[i].subscription_start_date = doc.user_created_date;
+	  }
+	  db.inx_user.save(doc);
+});
+
+- >> Patch needed : if end date is there add this to all
+db.inx_user.find({'user_package.end_date':{$exists:1, $ne:''}}).forEach(function (doc) {
+	  for (var i = 0; i < doc.user_subscriptions.length; i++) {
+	      doc.user_subscriptions[i].subscription_end_date = doc.user_package.end_date;
+	  }
+	  db.inx_user.save(doc);
+});
+
+17-1-2019
+------------------------------------------------------------------
+Client Delivery Portal - V2
+- >> login for internal user with OTP (Access define with user role)
+- >> Project Lock button UI integration
+- >> Social sharing on marketing content
+- >> Project Manager Multiple 
+- >> Proposal / Disc tab (Define with project type)
+
+14-1-2019
+------------------------------------------------------------------
+Industry Insider - CMS
+- >> Reset password with manual password 
+- >> Mailing only trial account (No email for register user)
+- >> Industry Insider - Select all option in Trend management
+
+11-1-2019
+------------------------------------------------------------------
+- >> Client Delivery Portal: Move code to live for frontend and CMS
+- >> Client Delivery Portal: Remove HRs from frontend
+- >> Industry Insider - turn off notification cron
+- >> Client Portal: increase session time for 24hrs
+- >> Industry Insider - Change email format for notification
+- >> OTP on project panel
+
+10-1-2019
+------------------------------------------------------------------
+- >> Font size change on login 
+- >> Enable download in case study, whitepaper
+- >> Infographics integration
+- >> FAQ status name chagne
+
+09-1-2019
+------------------------------------------------------------------
+Feedback
+- >> Header batch text 
+- >> User login deactivated error message
+- >> Check bug list
+- >> Update activity list
+
+Contract Details Page
+- >> Project List as per home UI
+- >> Total Used hours with details of Project Name with hyperlink and Project used hours
+- >> Remove pdf viewer link
+- >> Icon before all document
+
+Contract Home Page
+- >> Remove pdf viewer link
+
+Projects Home
+- >> Home page UI with stackholder and manager name and breif description
+- >> Remove pdf viewer link
+
+Project Details
+- Project used hours
+- >> Contract name, details
+- >> Phone number with ISD code
+
+Case Study
+- >> Add date after title
+
+08-1-2019
+------------------------------------------------------------------
+- >> Latest deliverables
+- >> Download configration needed - Download with API in all section
+
+07-1-2019
+------------------------------------------------------------------
+- All Document download is not working
+- Document viewer page & download option
+- Video and webinar on same snippet and page
+- Project listing - Only show 2 latest deliverables
+
+- White paper image is not showing properly (PDF convert image)
+- Industry development image is not showing (PDF convert image)
+- Snippet data count - add in configration (Industry development = 4, articles = 4) 
+- Snippet character limit - add in configration 
+- Change download format for Project profile page (UI same as last page)
+- Project profile page alignment
+
+- Download text with icon
+- New card view Project and Contract listing page
+- Article, case study, industry development, etc details page UI
+- After search add sepration
+- Change PDF icon size on listing page (Case study)
+- All snippets should consistance UI
+
+06-1-2019
+------------------------------------------------------------------
+- >> Breadcrumb UI changes
+- >> Contract agreement on listing
+- >> Contract detail page UI
+- >> Change base URL for document for Project, contract
+- >> Uploaded videos is not showing
+- >> All Detail page UI
+- >> All Document viewer UI
+- >> View All Project page
+- >> View All Contract page
+
+03-1-2019
+------------------------------------------------------------------
+Client Delivery Portal
+- >> Contract details page
+- >> Change favicon
+- >> Breadcrumb
+- Project Listing "New" tag functionality
+
+20-12-2018
+------------------------------------------------------------------
+- Client Delivery Portal
+
+10-12-2018
+------------------------------------------------------------------
+- >> Remove validity and Last line for subscribe
+
+06-12-2018
+------------------------------------------------------------------
+- >> Statistics report (Activity Duration is needed)
+- >> Remove trend name and validity from create user email.
+	- >> Subscribe and Trial - Only subscribe validity
+	- >> Subscribe - subscribe validity
+	- >> Trial - trial validity (mail template)
+- >> Trial reminder email changes 
+	- >> Send notification/reminder email only those user who has all Trial subscription.
+- >> Statistic report for trial and subscribed should be diffrent
+
+03-12-2018
+------------------------------------------------------------------
+- >> Cron set for trial account reminder email
+- >> Irfan and dinesh email
+- >> Trial V2 changes merge with new changes
+
+30-11-2018
+------------------------------------------------------------------
+- >> Marketing document viewer details on excel
+- >> Export user activity details with user_type 'register'
+
+29-11-2018
+------------------------------------------------------------------
+- Industry Insider - Trial V2
+	- >> Same file as that available to Registered Users 
+	- >> All Industry Developments
+	- >> All Startups
+	- >> All Entities
+	- >> Trial account automatically goes “Inactive” after one week, i.e., seven calendar days (including weekend)
+	- >> Auto-Notification in case of the user not logging in
+
+28-11-2018
+------------------------------------------------------------------
+- >> Add user - send email for trial and subscribe trend individual
+- >> Custom date remove for sales user on add user
+- >> 1 year and custom date for subscribe trend (Remove No Expiry);
+
+- >>Add - for no value
+- >>User status to Status
+- >>Show only trial user default
+- >>Naming changes
+- >>Remove count from report
+- >>Need company name search(Random search by user)
+
+27-11-2018
+------------------------------------------------------------------
+- >> Add Releationship Manager details those who have 1 year complementory trial account
+
+26-11-2018
+------------------------------------------------------------------
+- >> Date to custom date
+- >> 14 days default for trial
+- >> Sales user 14 only, with custom date option
+- >> Admin Sales - (Default)No Expiry, Custom Date
+- Previ Date color change
+- Date format
+- After selection of date close datepicker
+- Usability Word document for sales users
+- >>Set meeting with Ranjan Da
+
+23-11-2018
+------------------------------------------------------------------
+- >> Log for notification email cron output
+- >> Test notifiction email cron on UAT
+- >> update activity list
+- Password disable option for Sales users
+- Industry Insider - Deactivate cron changes (Expire trend flag)
+
+22-11-2018
+------------------------------------------------------------------
+- >> Date format for start date 10-Dec-2018
+- Hide Used field
+- >> Edit Icon with text
+- >> Custom date 
+- >> Trend List to select trend
+- Deactivate trend in cron
+
+21-11-2018
+------------------------------------------------------------------
+User activity report changes
+- >>User type Trial is define with trial trend
+- >>Trend list showing only trial trends
+
+Trend manage panel
+- >>Start date trend wise
+- >>Validation on listing limit
+
+20-11-2018
+------------------------------------------------------------------
+- >>Activity report export
+- Trial user Dashboard 
+- >>Short url for marketing
+
+db.inx_user.find({_id:ObjectId("5965b5bd13c9c17c0b007245")}).forEach(function (doc) {
+  if(typeof doc.user_subscribe_dt != 'undefined' && typeof doc.user_type != 'undefined' ){
+	var	usersub = [];
+	var usertype; 
+	var enddate;
+	if(doc.user_type == 'Register'){
+	  usertype = 'register';
+	}else{
+	  usertype = 'trial';
+	}
+	if(typeof doc.user_package.start_date != 'undefined' && typeof doc.user_package.package_days != 'undefined'){
+		enddate = new Date (doc.user_package.start_date.getTime() + doc.user_package.package_days*24*60*60000);
+	}else if(typeof doc.user_package.end_date != 'undefined' && typeof doc.user_package.package_days != 'undefined'){
+		enddate = doc.user_package.end_date;
+	}else{
+		enddate = '';
+	}
+
+    for (var i = 0; i < doc.user_subscribe_dt.length; i++) {
+      	doc.user_subscribe_dt[i].subscription_type = usertype;
+      	usersub.push({
+      		dt_id:doc.user_subscribe_dt[i].dt_id,
+      		dt_name:doc.user_subscribe_dt[i].dt_name,	      		
+      		subscription_type:usertype,
+      		subscription_end_date:enddate,
+      		company_profile_limit: doc.user_package.company_profile_limit,
+      		max_objects_per_listing: doc.user_package.max_objects_per_listing,
+      		company_profile_used: doc.user_package.company_profile_used,
+      	});
+      } 
+      doc.user_subscriptions = usersub;
+      db.inx_user.save(doc);
+    }
+  });
+  
+  
+
+15-11-2018
+------------------------------------------------------------------
+- >> Sale user login from CMS
+- >> Search is not working
+- Direct access of trend to the specific users Suraj, Jaideep, 
+- >> Activity log check for industry insider user
+- >> Trend active deactive from subcription
+
+13-11-2018
+------------------------------------------------------------------
+- CMS subscription changes
+	- >> Date is mandatory for trial
+	- >> After none selection subscription is not changing
+	- >> user_subscribe_dt is not updated on add/edit
+	- restrict register user for sales user
+
+- >> Trend image with trend id
+- >> Value chain with images
+
+
+3-11-2018
+------------------------------------------------------------------
+- >> User can not login if he/she dont have any access
+- >> Only show active trends
+- >> Trend limit using trend id		
+- >> CMS - Add setting icon 
+	- Trial - Add default limits and can change with config
+	- Register -  default limits and can change with config
+- >> After logout change path
+
+Prespective Changes:
+	- Image of trend as per challanges id
+	
+Changes in front:
+	- >> User can login if trend expired.
+	- >> If all trend got expired then user can not login into port.
+	- >> Trend should enable/disable if trend expired (If there is no any expiry date then it will enable for life time).
+	- >> Trend landing page should open with expiry date.
+	- >> Limits of access should apply trend wise.
+	- >> <DB change> add subscription_type in 'user_subscribe_dt' for every existing user
+	- >> <DB change> add 'user_subcription' field for every existing user
+	- Feedback mail send to WN email too (Feedback of WN email)
+	- Trail limit exceeded mail send to WN email too (support@)
+	- Request enrich profile email sent to WN email too (support@)
+	
+Changes in CMS:
+	- Config button for every trend
+	- If trend is trial (Limits will apply).
+
+31-10-2018
+------------------------------------------------------------------
+- Remove public from url 
+
+26-10-2018
+------------------------------------------------------------------
+WN - Create user in WN
+	- Add new -> Email exist
+		- Addition in scubsctiption 
+Industry Insider - Need API to create user and update user		
+-- Industry Insider - Trial package as well as register package		
+Industry Insider - Updates in Activity List	
+Startup Hubs - Hide startup count (TBD)
+
+Add/Update user from WN to Industry Insider
+- Check user exists or not using email id
+- If user exist : 
+	- Only update trend subscription details as follows
+		- Add all new trend subscriptions
+		- If user have subscription of trend A (full Access) then do not change anything
+		- If user have subscription of trend A (trial access) and want to change with full access then make changes
+- Else :
+	- Add new user 
+
+15-10-2018
+------------------------------------------------------------------
+> Remove charecter in development
+2833 - Analytics Startup count does not include entities tagged with respective Trend parent only.
+>> 2800 - Funding of decimal values are displayed incorrectly in front end
+2710 - In Company Detail page, Company Tag under Industry Development is not clickable.
+2705 - System shows wrong result for TOTAL FUNDING RAISED 1 to 10 & 10 to 50
+2703 - System shows wrong result for TOTAL FUNDING RAISED Less than 1M USD
+
+10-10-2018
+------------------------------------------------------------------
+- >> Change date color everywhere
+- >> Add ancher wiht blue color (Do not remove old color)
+- >> Remove login button and replace with Schedule a Demo button
+- >> Font color should be brand color
+
+09-10-2018
+------------------------------------------------------------------
+Industry Insider in WhatNext
+- Automative Trend with images in prosprective
+
+
+05-10-2018
+------------------------------------------------------------------
+- >> Change https to http in cmsindustryinsider
+- >> Release trend map manage
+- >> Release pdf scale 
+- Connect Prospective with Industry Insider
+
+03-10-2018
+------------------------------------------------------------------
+Trend -> Manage Trends
+Marketing -> Upload Marketing Doc
+Data Upload -> Upload Trend Data 
+Manual Data Uploading -> Manual Data Upload
+Client User Mangement + CMS User Management -> User Management
+- > Promt on save button
+- > 500 KB image size while upload (Add Note also)
+- > Load image icon
+- >> Reduce image size
+- > Change name to Upload Trend Banner Image
+- Change hotkey shortcuts
+- >> Temp Delete before save button
+
+01-10-2018
+------------------------------------------------------------------
+- UI Issues Industry development
+- MOST IMP : HTML out put with "" and ' in company view (Issue in vision system list load)
+
+28-09-2018
+------------------------------------------------------------------
+- >> Delete node with confirmation
+- >> Change delete button color
+- >> New node need name validation
+
+27-09-2018
+------------------------------------------------------------------
+- >> Remove all tred map box and expand all nodes
+- >> Add Node, Edit Node, Delete Node
+- >> Change "New node" to "Enter node name"
+- >> Add search
+- >> Change node icon to PLUS
+- >> On delete remove tagging from entity
+- >> Shortcut keys
+
+25-09-2018
+------------------------------------------------------------------
+- >> Upload taxonomy
+
+23-09-2018
+------------------------------------------------------------------
+1. >> Change date format in download document
+2. >> Entity id / Row number
+3. >> Change sheet name to Error Report
+4. >> Add IST
+5. >> Delete colum or update column
+
+19-09-2018
+------------------------------------------------------------------
+- >> Need video with flow player 
+- >> Industry insider re-branding
+	- >> Change logo
+	- >> Change email id
+	- >> Change document licence key
+- >> Upload data changes
+	- remove search
+	- Upload Entities Data > Upload Entities Logo > Upload Documents > Upload Developments > Upload Developments Images
+	- Upload Developments only excel upload
+
+14-09-2018
+------------------------------------------------------------------
+Data Uploading
+	- >> Delete option in excel for all
+	- >> Entity error - row number , entity id column needed
+	
+Upload 
+>> template
+>> 1. Check trend data or not
+>> next, previews, skip (conditional)
+>> add Note before upload
+>> Company => Logo (Logo optional) => Document Upload => Industry Development => industry development image upload
+
+09-09-2018
+------------------------------------------------------------------
+>> Company Serach
+- >> Company Search request on mail
+- >> Search result for trial user only show 4 result
+- >> Changes in message
+- >> Search result on MDB and Linkedin
+
+05-09-2018
+------------------------------------------------------------------
+- (On Monday - 09-09-2018)Upload new Data
+	- >> Suger Reduction 2
+	- >> Functional food new data
+	- >> Alternative Proteins
+	
+31-08-2018
+------------------------------------------------------------------
+>> Passenger wellness
+	- in Passenger wellness there are 7 start ups but under startup tracker i see 8 (in which alibaba is extra)
+	- similarly in Passenger Monitoring there are 38 startups but 39 can be seen under startup tracker
+	- In passenger monitoring some data points are missing (for e.g. Technology intro for company "Ultrahaptics" cannot be seen under its details)
+
+>> Get Info Changes
+	- Schedule a meeting - Save user's IP, City-region details and browser/device details (Fingerprint2) (by EOD Today, Aug 31, 2018)
+	- Google Analytics (Later next week)
+
+30-08-2018
+------------------------------------------------------------------
+>> On Stagging
+	- Passenger Monitoring
+	- Passenger Wellness
+>> Waiting Review	
+	- Smart Materials
+	- Vision System
+
+24-08-2018
+------------------------------------------------------------------
+- >> Schedule a demo functionality
+	- >> Last name mandatory
+	- >> Tab index issue
+	- >> Radio button position
+	- >> Duplicate time check
+	- greater then current timing
+	- >> User able to submit by entering either date or time. 
+   For Time, Date should be manadatory. (Pair validation)
+   In this case in the mail only time zone appears no prefered Date /Time.
+   - >> If User submit once, and he wants to schedule one more demo 
+   then the time zone is pre populated
+
+	
+>> UI Issues
+	- Mobile alignment for scheduler
+	- Title format - Please provide your preferred Date/Time for the demo
+
+23-08-2018
+------------------------------------------------------------------
+Industry Insider
+- >> Upload 48V system data
+1. Industry Insider - On backend for sales users while creating the users display only the trends which data available. Need to maintain a enable/disable flag for trend
+2. Frontend - Sales Users - On changing password on the main website the same password should be updated on his cms logins also
+
+21-08-2018
+------------------------------------------------------------------
+Jaggu = INX SS
+- Auto complete is not working
+Industry Insider 
+- Upload data 
+
+20-08-2018
+------------------------------------------------------------------
+INX Front - Company
+- Group Name
+- You prefer to be contacted by other companies for the purpose of
+
+Testing of publishing
+Company
+- >> Overview
+- >> Location
+- >> Funding
+- >> Collaboartion
+
+Product
+- >> About the product
+- >> Technical Specification
+- >> Value Proposition
+- >> Licensing 
+- >> Proudct People
+
+13-08-2018
+------------------------------------------------------------------
+Company Migration
+	- >> company logo
+	- >> company parent
+	- >> company emp size
+	- >> company DT (get parents of leaf node)
+	
+Product Migration
+	- >> product DT (get parents of leaf node) (Inherit to company DT)
+	- >> product industry add in product DT
+	- >> Product industry tagging (Inherit to company DT)
+	- >> product images, document, videos
+
+12-08-2018
+------------------------------------------------------------------
+SS Backend
+- >> mandatory astrick put before question in USE CASE 
+- >> put specising after astrick
+- >> Spell checking
+
+SS
+- >> Crome image issue in cropper
+
+
+09-08-2018
+------------------------------------------------------------------
+- >> Deployement of INX SS backend in live 6PM, (Including partner registration form, enable sms feature)
+- >> In Development in technology maturity level
+
+08-08-2018
+------------------------------------------------------------------
+- >> Save button issue in product
+- >> Save button issue in company  - company model question
+- >> IPR already exists
+- >> IPR URL issue
+- >> Experience delete, people delete issue 
+
+02-08-2018
+------------------------------------------------------------------
+- >> DT inherit issue from product to company
+- >> Send back issue while upload data	
+
+01-08-2018
+------------------------------------------------------------------
+- >> Cockie declaration
+- >> Company overview DT sorting
+- >> Product IPR UI change
+
+30-07-2018
+------------------------------------------------------------------
+INX SS -
+	- >> Crop & Upload to Save
+	- >> Check size limit and width and hieght - 500KB max ()
+	- >> Please select file font size
+	- >> Select Image to Browse button
+	- >> Change to free size
+	- >> accept only jpg png
+
+	- >> Change value proposition by default public access
+	- >> Specing between title and intro (Change font size of intro to 13px and Italic)
+
+	- >> Add new people pop-up UI - Select Existing People
+	- >> Resizer in Product and People too
+
+	- >> Date picker disable color change
+
+	- >> Welcome greeting before use name
+
+	- >> Change name product profile image to photo
+
+27-07-2018
+------------------------------------------------------------------
+1. All access by default public "Visible to everyone"
+2. People photo same like company logo "Please upload profile photo"
+3. Value Proposition default text should be prominent...increase font size, maintain gap between heading and the default text
+4. Notifuication ??? remove pause and play
+
+26-07-2018
+------------------------------------------------------------------
+- >> Drone DT name changes
+	- {dt_name:'Technology Types', 'dt_root':ObjectId('59a90d4313c9c1dc09004cfc')} ===> Changed parent id
+	- {dt_name:'Manufacturers', 'dt_root':ObjectId('59a90d4313c9c1dc09004cfc')}
+	- {dt_name:'Manufacturers', 'dt_root':ObjectId('59a90d4313c9c1dc09004cfc')}
+
+24-07-2018
+------------------------------------------------------------------
+- Scrolling issue
+- >> IOT acquire data add to the CMS
+- >> INX SS - Company overview - Add new question with checkbox 
+- >> Plus icon for all Add New button
+
+23-07-2018
+------------------------------------------------------------------
+- Stick header in IPR (CSS issue - Nilesh P)
+- 2466 - While clicking on any uploaded document, the document file name is showing some different name.
+- >> 2463 - System allowed to save Blank use case for Product Application
+- >> INX SS - Remove horizontal scroll from product tagging 
+INX SS =
+- >> Duplication issue - Product IPR and other IPR
+- >> 20-07 : (Robotics, 3D printing)
+- Product Changes
+	- >> Rediness field remove
+	- Access rights for (About the product) - describe and original objective
+	- >> Introcution to Technology tagging
+	- >> Video url on video upload
+	- >> Upload usecase - Change access right position == near save button
+	- >> Technical specification - Save only unique value in parameter and unit 
+	- Tag patent, copyrights and tradmark with product if it is already exists in IPR
+	
+19-07-2018
+------------------------------------------------------------------
+- >> AI Data max limit in screening
+- >> Acquisition status update in excel
+- Keyword issue patch for INX CMS Screening
+- >> Acquisition
+- >> INX SS - Tagging left to right issue
+- >> INX SS - Product IPR
+- >> Change font style in About the product technology tagging title
+- >> Text - Please choose the industries from left
+
+18-07-2018
+------------------------------------------------------------------
+- >> Technical Specification Issues
+1. Delete button issue
+2. I can save without Parameter and UNIT
+
+- >> Company Location
+1. Headquater is not showing in Location
+
+- >> IoT,Drones from CMS to LIVE
+	- IoT - Live - 917 >> CMS - 153 - 1070
+	- Drone - Live - 738 >> CMS -  - 967
+>> - INX CMS - In Progress or Blank in Send Back Product
+>> - INX CMS - Ecosystem validation in Publish
+>> - INX SS - IPR status - Discussion
+
+17-07-2018
+------------------------------------------------------------------
+- >> Live data add to CMS => 18-07 : (IoT,Drones ) 
+- >> Inherit only on save and submit
+- >> AI Live data to CMS
+- >> AI acquired data to CMS
+- >> IoT aquisition
+- >> API update to crowling server
+- >> Deduplication issue - Keyword is not showing proper
+
+16-07-2018
+------------------------------------------------------------------
+- AI data to Live CMS
+	- {'dt.duplicate_check':0, 'dt.dt_name':'Artificial Intelligence'}
+Show access rights only on the specific fields wherein applicable. List of Fields -
+
+#Fields wherein access applicable and default value "Disclose only on Request"
+#About the company
+  Group  Name
+  Legal Status
+  Facebook ID
+  Linkedin ID
+  Twitter ID
+#Product - Value Proposition
+  Time Reduction
+  Cost Reduction
+  Increases productivity
+  Increases efficiency
+  Revenue Generation
+  Technical Benefits
+  Enhances Aesthetics
+  Other Benefits
+#Company & Product - Collaboartion 
+#Product Documents - Documents, Images, Videos
+#Product - Specification
+#Product - Application Industry Tagging - Use Cases
+
+12-07-2018
+------------------------------------------------------------------
+Merge Live data to CMS
+- >> Autonomus Vehical
+- >> Blockchain
+
+Acquisition for
+- AI
+
+12-07-2018
+------------------------------------------------------------------
+- AI rerun with following keywords,
+- Taxonomy not inheriting in company - remove issue
+- Data uploading in CMS
+- >> SS - Access right view form Product Overview About form
+
+Sale Side changes
+1. Add "Previous" and "Next" on every tab. Rename "Complete" with "Next". Move the "Previous" and "Next" at top of the screen below top navigation. Remove border for the container
+2. >> Products - Merge "Introduction" and "Technology" tabs. Rename the merged tab as "Technology Tagging"
+3. >> Products - Merge Overview, About the product, Documents into a single tab "About the product". Show the application tagging at bottom.
+4. Product - Overview - Application Area Tagging 
+	1. Rename ""Upload Use Case"" to ""Create New Use Case""
+	2. Use Case is mandatory
+	3. Instead of form following descriptive section will be there to create an use case -
+
+		Q1: For what purpose and how is your product used in this Industry? (Editor - Mandatory)
+		Q2: What is the core benefit / s provided by your product? (Editor - Mandatory)
+		Q3:  How does your product differentiate from others in providing this application for the industry? (Editor - Optional)
+		Q4: Upload any supporting documents / Diagrams (File Attachment - Optional)
+		
+5. >> Products - Specification tab rename to "Technical Specification"
+6. Products - Specification - 
+	1. Remove Add/Edit on popup. 
+	2. Add inline add/edit concept (Like Data Table inline add/edit/delete/save)
+	3. Every specification will have three input - Parameter Name(inputbox), Value(unputbox) and Unit of Measurement
+	4. Parameter Name and Unit of Measurement will be textbox with auto suggestion
+	5. Unit of Measurement list will be provided by Arup
+	6. Once user entered a new parameter name or a new unit of measurement it will be inserted into a master list in database for reuse in autosuggest."
+7. Value Propostion (Default Text will be provided by Peter)
+8. Products - Introduct - Once user has completed the DT tagging and ecosystem tagging then whenever he clicks on "Products & Technologies" from the left navigation, he will directly land on the "About the Product" tab
+
+
+11-07-2018
+------------------------------------------------------------------
+- >> Side click on pop-up disabled
+- >> Close button in image doc
+
+10-07-2018
+------------------------------------------------------------------
+- >> "No Product" Notifier
+
+07-07-2018
+------------------------------------------------------------------
+- Company overview - Contry should remove when location will delete
+- >> Use case UI changes
+- >> Company tab status update
+- >> Product tab status update
+	- Overview =  Name, maturity, rediness
+	- About = Whats unique
+	- Specification - Atleast one entry
+	- Proposition - Atleast one entry
+	- Collabration - Atleast one entry
+	- Document - Atleast one entry
+- >> UI integration - Product Technology
+- >> Product overview changes
+- >> Product overview access rights
+- >> Add new product
+	- Save & Continue
+- >> Access right name font changing
+
+
+02-07-2018
+------------------------------------------------------------------
+Standard changes
+- Remove bottom navigation
+- Reduce hieght of top header
+- Toggler for public private selection (On-off toggle)
+- All ADD button always on top
+- Remove steps 1-7 and company name from main frame 
+
+Company Introduction
+- Next button after DT selection should be shown (Put Next button on top)
+- After next button technology should not pre select 
+- Ecosystem of technology is mandatory
+- Put validation - All selected DT tagging with ecosystem is mandatory (Jump to the next DT if this validtion fails)
+- Need direct link on ecosystem tagging
+- Next Previous button on top after wizard bar (Only on introduction page and mark intro completed)
+
+Company Overview
+- Remove disable inputs show information with text (On edit mode input field will open)
+- Edit pencil icon should bigger 
+
+Company About
+- Edit button for all textarea field (for all 3 editor)
+
+Company Location
+- Add button rename "Add new location" and put button on top 
+- Show access type on list
+
+Company Partnership and collabration
+- Change field name : Collabration with -
+- Show access type on list
+- Add placeholder - if collaration with more than one add with comma sepration
+- Remove card view and change to table with following columns Collaration with, year of engagment, type???
+
+Company funding
+- Remove card view and change to table with col - Date, round and amount
+- Button name "Add New Funding"
+
+Company subdairy - remove tab
+
+Product List
+- Change to table view, only product name with add, new, delte option
+
+Product Introduction
+- Validation - select technology
+- Put COMPLETE button to go further
+- Add technology tagging after DT selection (Same as company mandatory tagging)
+	Product tagging
+	- Do not pre select technology in tagging
+	- Put selected tagges on top on selection box
+		
+Product Overview
+- Remove disable input show view profile (On edit form will open)
+	Application
+	- Use case appears with pop-up
+	- Remove selection of DT in selected tagging
+
+Product About
+- Individual edit option on 4 editors
+- Remove tagging section
+
+Value Proption
+- Remove table format - show with view and edit form
+
+UI
+- Completed check needed on DT tagging
+- Company name add to the sidebar
+- Header color, size should same for all screen
+
+
+
+
+28-06-2018
+------------------------------------------------------------------
+Partner Product Overview
+- IP backed three option on Yes
+	- Do you have Patents?
+	- Do you have Trademarks?
+	- Do you have Copyrights?
+
+27-06-2018
+------------------------------------------------------------------
+partner_industry:{
+	industry_id
+	industry_name
+	use_case:{
+		title
+		description
+		document:[
+			{
+				name:
+				file:
+				type:
+			}
+		]
+	}
+}
+
+26-06-2018
+------------------------------------------------------------------
+>> Upload Live data 
+	company
+	- company_dt
+	- company_industry
+	- company_value_chain_player_type
+	product
+	- product_dt
+	- product_industry
+	For logo
+	- copy logo from inx folder to cms in script itself
+
+	Product Overview
+	- IP Backed is dropdown with value Yes/No
+
+	Live ES data merge to CMS
+	- Put all data in QC queue
+
+22-06-2018
+------------------------------------------------------------------
+- Sale Side Access Rights
+	- Admin - Can change 
+- Company bulk taxonomy tagging 
+	- Allow to change/add dt in bulk taxonomy
+	- Add source_dt for new DT
+
+21-06-2018
+------------------------------------------------------------------
+- Partner product 
+	- Overview
+	- About Product
+	- Product tagging
+
+20-06-2018
+------------------------------------------------------------------
+SaleSide
+- >> Company HTML view implementation
+- >> 2299: No editor options for bulk uploaded images.
+
+13-06-2018
+------------------------------------------------------------------
+- After save and submit do not load listing page
+- >> Raw is not showing to the error excel file
+- >> Patent issues
+	- >> USPTO not added 
+
+06-06-2018
+------------------------------------------------------------------
+- >> Release CMS to LIVE
+	- >> Application.ini compare
+	- >> node config.js
+	- >> CK editor file check
+
+BUGS
+>> 2247 - Company should be move to current uploading status of processing or screening irrespective of there status in CMS
+>> 2245 - After re uploading published company for same DT ,company is not showing for that DT in CMS
+>> 2246 - Complete status should be changed blank after re uploading company for processing
+
+05-06-2018
+------------------------------------------------------------------
+- >> Create deduplication script for uploaded data only
+- Create log module for updated columns
+- >> Hide competitor tab 
+
+BUGS
+- >> 2243 - Invalid logo prevents company from publishing
+- >> 2242 - Taxonomy options seen in basic info. login
+- >> 2244 - Spelling error in error message for data uploading
+- >> 2220 - Similar products gets added twice when double clicked on save button.
+- >> 2228 - Application error on wrong excel file upload.
+- >> 2230 - Should not allow to upload blank sheet
+
+04-06-2018
+------------------------------------------------------------------
+BUGS
+- >> 2231 - DTs selection not specified.
+- >> 2233 - Wrong file selection error message should be shown on file selection and not on Finish
+- >> 2235 - Error message change on Processing tab when all DTs for Screening are selected.
+- >> 2234 - Previously selected details are shown.
+- >> 2236 - Parent id is provided while uploading but not tagged in CMS
+- >> 2232 - Unable to navigate from Upload to Processing
+- >> 2229 - Zip code uploaded but not showing in company address.
+- >> 2227 - Management Team (Yes/No) is marked yes in Excel while upload but not showing in people tab
+- >> 2237 - System asks something unique data even for company business model even it being non mandatory.
+- >> 2242 - Taxonomy options seen in basic info. login
+
+- >> 2226 - After uploading any duplicate records a new page gets open with source code.
+
+31-05-2018
+------------------------------------------------------------------
+- Upload Data
+	>> - Company Product live issue
+	>> - Product / Technology maturity Level - Commercialised is not captured 
+	- Management Team (Yes/No) is marked yes in Excel but not showing in people tab
+- Bulk Taxonomy
+	>> - Save & Submit in bulk tagging
+	>> - Mark complete to inprogress
+- Taxonomy filter
+	>> - Request to change taxonomy filter button position
+	>> - Load all taxonomy of selected DT
+	
+	
+- >> 2217 - Reset option in IPR processed patents doesn't work
+- >> 2216 - Invalid message appears while using reset in processed patents.
+- >> 2212 - Unable to upload data using Data Screener login.	
+- >> 2200 - Invalid message appears while reviewed of patents.
+- >> 2213 - System gets hanged when user clicks on Patent Code in Processed Patents Tab
+- >> 2225 - After uploading all companies Is live status is showing "Yes" without publishing
+- >> 2223 - Company taxonomy status doesn't change from Complete to In Progress
+
+
+28-05-2018
+------------------------------------------------------------------
+- Acquisition process cycle in Excel
+
+>> - IPR
+	>> - Hide Acquired Patent column
+>> - Taxonomy Filter
+	>> - DT Selection mandatory
+>> - Bulk tagging
+	>> - Show comman selection of taxonomy
+>> - Image minipaint
+	- >> Open image on edit
+	- >> refresh other tab on save
+>> - Upload Data 
+	- Manual filter (HOLD)
+	>> - Download template hyperlink
+
+23-05-2018
+------------------------------------------------------------------
+- Bulk Taxonomy Tagging
+	a) Taxonomy company filter
+	- After selecting DT, Taxonomy tagging panel will open in pop-up
+	- 
+	b) Taxonomy tagging process
+	- In Data Processing company list, Select multiple companies and click on taxonomy tagging
+	- Taxonomy tagging panel will open
+		- Blank taxonomy panel will open
+		- Basic validation
+			- Ecosystem > Value chain is mandatory tagging ???? Yes
+			- Can not untick tagging which is tagged with product ???? Yes
+			
+		- Application industry will update to the all companies ??? Yes
+		- Should I update "value chain player" type for all companies ??? Yes
+	- Can we submit bulk tagging ??? No
+		
+- Upload data example
+
+09-05-2018
+------------------------------------------------------------------
+- Change acruiring to acquisition temp collection name
+- patent_count in patent_source in acquisition collection
+
+Bug Fix - 24/04/2018
+------------------------------------------------------------------
+2080 - Selecting 2 companies to send back,system sends only 1 company at a time.

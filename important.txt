@@ -66,6 +66,100 @@ db.createUser(
   }
 )
 
+Group/Distinct on two fields
+--------------------------------------------------------------
+db.inx_marketing_content_view.aggregate([
+{$group: {_id : {email : '$contact_email',name:'$contact_name'}}},
+{$project : {email : '$_id.email', name : '$_id.name', _id : 0}}
+]);
+
+
+Mongo Patch (IMP)
+--------------------------------------------------------------
+db.inx_user.find({user_email:{$in:['luis.robles@total.com', 'david.nevicato@total.com', 'laurence.marechal@total.com']}}).forEach(function (doc) {
+  if(typeof doc.user_subscribe_dt != 'undefined' && typeof doc.user_type != 'undefined' ){
+	var	usersub = [];
+	var usertype; 
+	var enddate;
+	if(doc.user_type == 'Register'){
+	  usertype = 'register';
+	}else{
+	  usertype = 'trial';
+	}
+	enddate = '';
+	if(typeof doc.user_package.end_date != 'undefined' && doc.user_package.end_date != ''){
+		enddate = doc.user_package.end_date;
+	}else if(typeof doc.user_package.start_date != 'undefined' && typeof doc.user_package.package_days != 'undefined' && doc.user_package.package_days != '' && doc.user_package.package_days != 0){
+		enddate = new Date (doc.user_package.start_date.getTime() + doc.user_package.package_days*24*60*60000);
+	}
+	
+
+    for (var i = 0; i < doc.user_subscribe_dt.length; i++) {
+      	doc.user_subscribe_dt[i].subscription_type = usertype;
+      	usersub.push({
+      		dt_id:doc.user_subscribe_dt[i].dt_id,
+      		dt_name:doc.user_subscribe_dt[i].dt_name,	      		
+      		subscription_type:usertype,
+      		subscription_end_date:enddate,
+      		company_profile_limit: doc.user_package.company_profile_limit,
+      		max_objects_per_listing: doc.user_package.max_objects_per_listing,
+      		company_profile_used: doc.user_package.company_profile_used
+      	});
+      } 
+      doc.user_subscriptions = usersub;
+      db.inx_user.save(doc);
+    }
+  });
+  
+////////////////////////////////////////////
+Define end date in subscription
+
+db.inx_user.find({'user_package.end_date':{$exists:1, $ne:''}}).forEach(function (doc) {
+	  for (var i = 0; i < doc.user_subscriptions.length; i++) {
+	      doc.user_subscriptions[i].subscription_end_date = doc.user_package.end_date;
+	  }
+	  db.inx_user.save(doc);
+});  
+  
+ulrich.nerz@infineon.com  
+////////////////////////////////////////////
+Create date for subcription
+
+db.inx_user.find({'user_subscriptions.subscription_start_date':{$exists:0}}).forEach(function (doc) {
+	  for (var i = 0; i < doc.user_subscriptions.length; i++) {
+	      doc.user_subscriptions[i].subscription_start_date = doc.user_created_date;
+	  }
+	  db.inx_user.save(doc);
+});
+
+nilesh.lathe@cheersin.comm
+avanish.vasudevan@futurebridge.comm
+CLarrey@lindt.comm
+Siddharth.S.Singh2@shell.comm
+  
+Date between 
+--------------------------------------------------------------
+items.find({
+    created_at: {
+        $gte: ISODate("2010-04-29T00:00:00.000Z"),
+        $lt: ISODate("2010-05-01T00:00:00.000Z")
+    }
+});
+
+Date Adding/Subtracting
+--------------------------------------------------------------
+/// 1 day subtracting from current date
+"StartDate" : { "$gte" : new Date(ISODate().getTime() - 1000 * 3600 * 24 * 1) }
+
+User email id change
+--------------------------------------------------------------
+db.getCollection("inx_user").find({}).forEach(
+       function(e, i){ 
+           e.user_email=e.user_email+'m'; 
+           db.inx_user.save(e);
+       }
+    )
+
 
 
 SHELL COMMANDS
@@ -127,3 +221,35 @@ usort($allDt, function($a, $b) {
 Clean HTML string 
 -------------------------------------------------------------
 html_entity_decode()
+
+Check expiry date time
+-------------------------------------------------------------
+$start_date = date('Y-m-d', $user['user_package']['start_date']->sec);
+$package_days_text = "+" . $package_days . " days";
+$accountExpireDate = date('d-M-Y', strtotime($package_days_text, strtotime($start_date)));
+$end_date = strtotime($accountExpireDate . ' 23:59:59');
+$time = time();
+if ($time > $end_date) {
+	return true;
+}
+
+Add hours in date
+--------------------------------------------------------------
+date('Y-m-d H:i:s', strtotime('+12 hours', $myDate));
+
+Send array in field value in POST
+--------------------------------------------------------------
+HTML File
+<input type="hidden" name="alltrends" value="<?= htmlentities(serialize($alltrend))?>">
+PHP File
+$alltrends = unserialize($_POST['alltrends']);
+
+Explode and Trim together
+--------------------------------------------------------------
+$new_arr = array_map('trim', explode(',', $str));
+
+React JS
+============================================================================================================================================
+Install using Node JS command
+- $ sudo npm i -g create-react-app@1.5.2
+
