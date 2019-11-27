@@ -1,0 +1,34 @@
+{
+  "datapoints": [
+    {
+      "_id": 0,
+      "key": "Animal",
+      "value": "Cat",
+      "id": 1
+    },
+    {
+      "_id": 0,
+      "key": "Automibile",
+      "value": "Car",
+      "id": 2
+    },
+    {
+      "key": "asd",
+      "value": "asd",
+      "id": 3
+    },
+    {
+      "key": "asd",
+      "value": "asd",
+      "id": 4
+    }
+  ],
+  "jwt": {
+    "name": "MAc",
+    "token": "RsT5OjbzRn430zqMLgV3Ia",
+    "authorisedRoutes": [
+      "/",
+      "/datapoints"
+    ]
+  }
+}
