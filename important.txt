@@ -159,6 +159,34 @@ db.getCollection("inx_user").find({}).forEach(
            db.inx_user.save(e);
        }
     )
+	
+Mongo query with multiple regex
+--------------------------------------------------------------
+var x = ["sai","test","jacob","justin"],
+    regex = x.map(function (e) { return new RegExp(e, "i"); });
+db.users.find({"profile.firstName": { "$in": regex } }); 	
+
+Update value from diffrent collection
+--------------------------------------------------------------
+db.cl_universe_bk.find({}).forEach(function(e,i){
+  var item = db.cl_list_contacts.findOne({fk_contact_id:e._id});
+  e.list_id = item.fk_list_id;
+  db.cl_universe_bk.save(e);
+});
+
+
+Get all fields of collection
+--------------------------------------------------------------
+mr = db.runCommand({
+  "mapreduce" : "temp_marketing_universe",
+  "map" : function() {
+    for (var key in this) { emit(key, null); }
+  },
+  "reduce" : function(key, stuff) { return null; }, 
+  "out": "temp_marketing_universe" + "_keys"
+});
+(THEN RUN FOLLOWING QUERY)
+db[mr.result].distinct("_id")
 
 
 
@@ -174,6 +202,11 @@ In UAT SSH - user Mongo shell
 > mongo
 > use <database_name>
 
+Find file with content and move to other folder
+-------------------------------------------------------------
+for f in $(grep -rnw '/home/www/html/mautic/app/spool/default/' -e 'adoption in future powertrains' | awk '{print $3}') ; do 
+	mv "$f" /home/fbmailer/error_emails/
+done
 
 For zip folder - command
 -------------------------------------------------------------
@@ -184,6 +217,15 @@ $ tar xvzf file.tar.gz      ////// UNTAR
 Download from server to server
 -------------------------------------------------------------
 $ wget –no-check-certificate http://185.216.76.28/downloads/AI_Data.zip
+
+File transfer from one server to another
+-------------------------------------------------------------
+Pass files to another server
+$ scp -P 2020 -r /home/DA_APP/* root@172.20.216.25:/home/DA_APP/
+Get files from another server
+$ scp -P 2020 -r root@172.20.216.25:/home/DA_APP/* /home/DA_APP/
+
+Note: use -r (indicate recursive) if you want transfer directory
 
 Sync and copy
 -------------------------------------------------------------
@@ -197,6 +239,22 @@ $ mongoexport -d inx_cms -c sourcecollection | mongoimport -d inx_cms -c targetc
 Deploy inx_cms to UAT
 -------------------------------------------------------------
 $ sh /home/deployment/deployment_inx_cms_uat.sh
+
+Check running file with tail
+-------------------------------------------------------------
+$ tail -f logs/newslettersend-2019082-2.log
+
+Check running file with tail
+-------------------------------------------------------------
+$ ps -aux|grep node
+
+Find folder/file
+-------------------------------------------------------------
+$ find /home -name "node_modules"
+
+Change owner from root to apache
+-------------------------------------------------------------
+sudo chown -R apache /home/www/html/bi_uat/
 
 
 NODE
@@ -233,6 +291,18 @@ if ($time > $end_date) {
 	return true;
 }
 
+Sort array date descending
+--------------------------------------------------------------
+function sortDate($a, $b) {
+	$a = date('Y-m-d', $a['date']->sec);
+	$b = date('Y-m-d', $b['date']->sec);
+	if ($a == $b) {
+		return 0;
+	}
+	return ($a > $b) ? -1 : 1;
+}
+usort($searchResult, "sortDate");
+
 Add hours in date
 --------------------------------------------------------------
 date('Y-m-d H:i:s', strtotime('+12 hours', $myDate));
@@ -247,6 +317,10 @@ $alltrends = unserialize($_POST['alltrends']);
 Explode and Trim together
 --------------------------------------------------------------
 $new_arr = array_map('trim', explode(',', $str));
+
+Highlight matched word
+--------------------------------------------------------------
+$matchedStatement = preg_replace("/\w*?$searchword\w*/i", "<span style='background:yellow'>$0</span>", $content);
 
 React JS
 ============================================================================================================================================
